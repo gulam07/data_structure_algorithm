@@ -23,23 +23,39 @@ int main(){
     head->next=temp1;
     Node* temp2=new Node(11);
     temp1->next=temp2;
+    Node* temp3=new Node(13);
+    temp2->next=temp3;
 
-    Node* forward=NULL;
-    Node* curr=head;
-    Node* prev=NULL;
+    // Node* forward=NULL;
+    // Node* curr=head;
+    // Node* prev=NULL;
 
-    while(curr!=NULL){
-        forward=curr->next;
-        curr->next=prev;
-        prev=curr;
-        curr=forward;
+    // while(curr!=NULL){
+    //     forward=curr->next;
+    //     curr->next=prev;
+    //     prev=curr;
+    //     curr=forward;
+    // }
+
+    // while(prev!=NULL){
+    //     cout<<prev->data<<endl;
+    //     prev=prev->next;
+    // }
+    int count=0;
+    Node*tem=head;
+    while(tem!=NULL){
+        count++;
+        tem=tem->next;
+
     }
 
-    while(prev!=NULL){
-        cout<<prev->data<<endl;
-        prev=prev->next;
+    // cout<<count;
+    int ans=1;
+    while(ans<(count/2)+1){
+        head=head->next;
+        ans++;
     }
-
+    cout<<head->data;
 
     return 0;
 
